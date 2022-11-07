@@ -1,23 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import { useContext } from "react";
+import { BookContext } from "./context/BookContext";
+
+import "./App.css";
 
 function App() {
+  const { books } = useContext(BookContext);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="text-center font-bold text-3xl p-6 bg-slate-500 w-[960px] mx-auto text-zinc-300">
+      You have {books.length} 📚
     </div>
   );
 }
